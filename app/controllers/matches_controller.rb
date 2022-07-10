@@ -3,7 +3,7 @@ class MatchesController < ApplicationController
 
   # GET /matches or /matches.json
   def index
-    @matches = Match.all
+    @matches = Match.all.includes(:team1, :team2)
   end
 
   # GET /matches/1 or /matches/1.json
@@ -65,6 +65,6 @@ class MatchesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def match_params
-      params.require(:match).permit(:registration_id, :opponent_id, :registration_score, :opponent_score)
+      params.require(:match).permit(:team1_id, :team2_id, :team1_score, :team2_score)
     end
 end

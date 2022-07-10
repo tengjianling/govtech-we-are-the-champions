@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @teams_creator %>
+
+<div>
+  <%= link_to "Edit this teams creator", edit_teams_creator_path(@teams_creator) %> |
+  <%= link_to "Back to teams creators", teams_creators_path %>
+
+  <%= button_to "Destroy this teams creator", @teams_creator, method: :delete %>
+</div>

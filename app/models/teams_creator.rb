@@ -1,0 +1,2 @@
+class TeamsCreator < ApplicationRecord
+end

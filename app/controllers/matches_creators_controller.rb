@@ -28,13 +28,13 @@ class MatchesCreatorsController < ApplicationController
     @user_inputs.each do |input|
       fields = input.split(" ")
       first_team = fields[0]
-      first_team_id = Registration.find_by(name: first_team).id
+      first_team_id = Team.find_by(name: first_team).id.to_i
       second_team = fields[1]
-      second_team_id = Registration.find_by(name: second_team).id
+      second_team_id = Team.find_by(name: second_team).id.to_i
       first_team_score = fields[2]
       second_team_score = fields[3]
 
-      Match.create(registration_id: first_team_id, opponent_id: second_team_id, registration_score: first_team_score, opponent_score: second_team_score)
+      Match.create(team1_id: first_team_id, team2_id: second_team_id, team1_score: first_team_score, team2_score: second_team_score)
     end
 
 

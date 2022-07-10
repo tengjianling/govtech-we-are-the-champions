@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Teams creators</h1>
+
+<div id="teams_creators">
+  <% @teams_creators.each do |teams_creator| %>
+    <%= render teams_creator %>
+    <p>
+      <%= link_to "Show this teams creator", teams_creator %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New teams creator", new_teams_creator_path %>

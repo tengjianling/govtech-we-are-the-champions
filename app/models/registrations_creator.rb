@@ -1,2 +1,0 @@
-class RegistrationsCreator < ApplicationRecord
-end
