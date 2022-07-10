@@ -1,7 +1,17 @@
-<h1>landing page</h1>
+<h1>Home Page</h1>
 
-<%= link_to 'Registrations', registrations_path %>
-<%= link_to 'Matches', matches_path %>
-<%= link_to 'Create Registrations', new_registrations_creator_path %>
-<%= link_to 'Create Matches', new_matches_creator_path %>
+<div><%= link_to 'Registrations', registrations_path %></div>
 
+<div><%= link_to 'Matches', matches_path %></div>
+<div><%= link_to 'Create Registrations', new_registrations_creator_path %></div>
+<div><%= link_to 'Create Matches', new_matches_creator_path %></div>
+<div><button onclick="clear_all_data()">Clear All Data</button></div>
+
+
+<script>
+  function clear_all_data() {
+    <%= Registration.delete_all %>
+    <%= Registration.delete_all %>
+    alert("All data has been cleared");
+  };
+</script>
