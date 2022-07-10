@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Matches creators</h1>
+
+<div id="matches_creators">
+  <% @matches_creators.each do |matches_creator| %>
+    <%= render matches_creator %>
+    <p>
+      <%= link_to "Show this matches creator", matches_creator %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New matches creator", new_matches_creator_path %>

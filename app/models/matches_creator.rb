@@ -1,0 +1,2 @@
+class MatchesCreator < ApplicationRecord
+end

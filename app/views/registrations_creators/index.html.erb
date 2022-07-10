@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Registrations creators</h1>
+
+<div id="registrations_creators">
+  <% @registrations_creators.each do |registrations_creator| %>
+    <%= render registrations_creator %>
+    <p>
+      <%= link_to "Show this registrations creator", registrations_creator %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New registrations creator", new_registrations_creator_path %>

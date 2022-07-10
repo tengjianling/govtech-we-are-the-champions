@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @matches_creator %>
+
+<div>
+  <%= link_to "Edit this matches creator", edit_matches_creator_path(@matches_creator) %> |
+  <%= link_to "Back to matches creators", matches_creators_path %>
+
+  <%= button_to "Destroy this matches creator", @matches_creator, method: :delete %>
+</div>

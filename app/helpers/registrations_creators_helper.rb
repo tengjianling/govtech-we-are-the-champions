@@ -1,0 +1,2 @@
+module RegistrationsCreatorsHelper
+end

@@ -1,0 +1,2 @@
+class RegistrationsCreator < ApplicationRecord
+end
