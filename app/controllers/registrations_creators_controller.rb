@@ -1,6 +1,13 @@
 class RegistrationsCreatorsController < ApplicationController
   before_action :set_registrations_creator, only: %i[ show edit update destroy ]
 
+
+  def destroy_them_all
+    Registration.destroy_all
+    Match.destroy_all
+    redirect_to root
+  end
+
   # GET /registrations_creators or /registrations_creators.json
   def index
     @registrations_creators = RegistrationsCreator.all
@@ -33,7 +40,7 @@ class RegistrationsCreatorsController < ApplicationController
 
       Registration.create(name: name, date: date, group: group)
     end
-    
+
     respond_to do |format|
       if @registrations_creator.save
         format.html { redirect_to registrations_creator_url(@registrations_creator), notice: "Registrations creator was successfully created." }

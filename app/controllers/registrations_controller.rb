@@ -71,6 +71,6 @@ class RegistrationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def registration_params
-      params.require(:registration).permit(:name, :date, :group, :user_input)
+      params.require(:registration).permit(:name, :date, :group)
     end
 end
