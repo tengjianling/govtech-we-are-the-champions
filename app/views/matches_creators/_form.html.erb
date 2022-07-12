@@ -4,8 +4,12 @@
       <h2><%= pluralize(matches_creator.errors.count, "error") %> prohibited this matches_creator from being saved:</h2>
 
       <ul>
-        <% matches_creator.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        
+
+        <%@matches_creator.errors.messages.values.each do |msg| %>
+          <%msg.each do  |m| %>
+            <li><%= m %></li>
+          <%end %>
         <% end %>
       </ul>
     </div>

@@ -13,23 +13,26 @@ class TeamsCreatorsController < ApplicationController
   # POST /teams_creators or /teams_creators.json
   def create
     @teams_creator = TeamsCreator.new(teams_creator_params)
-
-    # Create the respective registrations based on user input
-    @user_inputs = @teams_creator.user_input.split("\n")
-    @user_inputs.each do |input|
-      fields = input.split(" ")
-      name = fields[0]
-      date = fields[1]
-      day = date.split("/")[0]
-      month = date.split("/")[1]
-      formatted_date = Date.parse("2022-" + month + "-" + day)
-      group = fields[2]
-
-      Team.create(name: name, registration_date: formatted_date, group: group)
-    end
-
     respond_to do |format|
       if @teams_creator.save
+        # Create the respective registrations based on user input
+        @user_inputs = @teams_creator.user_input.split("\n")
+        @user_inputs.each do |input|
+          fields = input.split(" ")
+          name = fields[0]
+          date = fields[1]
+          day = date.split("/")[0]
+          month = date.split("/")[1]
+          begin
+            formatted_date = Date.parse("2022-" + month + "-" + day)
+          rescue ArgumentError
+            nil
+          end
+
+          group = fields[2]
+
+          Team.create(name: name, registration_date: formatted_date, group: group)
+        end
         format.html { redirect_to teams_path, notice: "Teams are successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }

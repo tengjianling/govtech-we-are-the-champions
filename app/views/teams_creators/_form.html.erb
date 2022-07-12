@@ -4,8 +4,10 @@
       <h2><%= pluralize(teams_creator.errors.count, "error") %> prohibited this teams_creator from being saved:</h2>
 
       <ul>
-        <% teams_creator.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <%@teams_creator.errors.messages.values.each do |msg| %>
+          <%msg.each do  |m| %>
+            <li><%= m %></li>
+          <%end %>
         <% end %>
       </ul>
     </div>
