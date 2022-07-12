@@ -3,7 +3,7 @@ class Match < ApplicationRecord
   belongs_to :team2, :class_name => "Team"
 
   def is_draw
-    return registration_score == opponent_score
+    return team1_score == team2_score
   end
 
   def get_winner
@@ -12,10 +12,10 @@ class Match < ApplicationRecord
       return -1
     end
 
-    if registration_score > opponent_score
-      return registration_id
+    if team1_score > team2_score
+      return team1_id
     else
-      return opponent_id
+      return team2_id
     end
   end
 
@@ -25,10 +25,10 @@ class Match < ApplicationRecord
       return -1
     end
 
-    if registration_score < opponent_score
-      return registration_id
+    if team1_score < team2_score
+      return team1_id
     else
-      return opponent_id
+      return team2_id
     end
   end
 end

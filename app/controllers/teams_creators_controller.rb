@@ -30,9 +30,12 @@ class TeamsCreatorsController < ApplicationController
       fields = input.split(" ")
       name = fields[0]
       date = fields[1]
+      day = date.split("/")[0]
+      month = date.split("/")[1]
+      formatted_date = Date.parse("2022-" + month + "-" + day)
       group = fields[2]
 
-      Team.create(name: name, registration_date: date, group: group)
+      Team.create(name: name, registration_date: formatted_date, group: group)
     end
 
 

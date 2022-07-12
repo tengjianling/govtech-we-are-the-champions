@@ -1,1 +1,27 @@
-test
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Team Name</th>
+      <th>Points</th>
+      <th>Number of Goals</th>
+      <th>Alternative Points</th>
+      <th>Registration Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sorted_results.each do |r| %>
+      <tr>
+        <td><%= r.group %></td>
+        <td><%= r.name %></td>
+        <td><%= r.points %></td>
+        <td><%= r.goals %></td>
+        <td><%= r.alternative_points %></td>
+        <td><%= r.registration_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

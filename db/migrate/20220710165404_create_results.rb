@@ -6,6 +6,7 @@ class CreateResults < ActiveRecord::Migration[7.0]
       t.integer "goals"
       t.integer "alternative_points"
       t.integer  "group"
+      t.date "registration_date"
       t.timestamps
     end
   end

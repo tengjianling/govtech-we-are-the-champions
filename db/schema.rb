@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_07_10_173516) do
-  create_table "matches", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "matches", charset: "utf8mb3", force: :cascade do |t|
     t.integer "team1_id"
     t.integer "team2_id"
     t.integer "team1_score"
@@ -20,31 +20,32 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_10_173516) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "matches_creators", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "matches_creators", charset: "utf8mb3", force: :cascade do |t|
     t.text "user_input"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "results", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "results", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.integer "points"
     t.integer "goals"
     t.integer "alternative_points"
     t.integer "group"
+    t.date "registration_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "teams", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "teams", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
-    t.datetime "registration_date"
+    t.date "registration_date"
     t.integer "group"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "teams_creators", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "teams_creators", charset: "utf8mb3", force: :cascade do |t|
     t.text "user_input"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
