@@ -2,13 +2,30 @@
 
 <h1>Teams</h1>
 
-<div id="teams">
-  <% @teams.each do |team| %>
-    <%= render team %>
-    <p>
-      <%= link_to "Show this team", team %>
-    </p>
-  <% end %>
+<div>
+  <%= link_to "Home", root_path %>
 </div>
 
-<%= link_to "New team", new_team_path %>
+<div id="teams">
+  <table>
+    <thead>
+      <tr>
+        <th>Team Name</th>
+        <th>Group</th>
+        <th>Registration Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @teams.each do |t| %>
+        <tr>
+          <td><%= t.name %></td>
+          <td><%= t.group %></td>
+          <td><%= t.registration_date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+

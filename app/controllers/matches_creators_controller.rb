@@ -1,15 +1,6 @@
 class MatchesCreatorsController < ApplicationController
   before_action :set_matches_creator, only: %i[ show edit update destroy ]
 
-  # GET /matches_creators or /matches_creators.json
-  def index
-    @matches_creators = MatchesCreator.all
-  end
-
-  # GET /matches_creators/1 or /matches_creators/1.json
-  def show
-  end
-
   # GET /matches_creators/new
   def new
     @matches_creator = MatchesCreator.new
@@ -40,8 +31,7 @@ class MatchesCreatorsController < ApplicationController
 
     respond_to do |format|
       if @matches_creator.save
-        format.html { redirect_to matches_creator_url(@matches_creator), notice: "Matches creator was successfully created." }
-        format.json { render :show, status: :created, location: @matches_creator }
+        format.html { redirect_to matches_path, notice: "Matches were successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @matches_creator.errors, status: :unprocessable_entity }
@@ -49,28 +39,6 @@ class MatchesCreatorsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /matches_creators/1 or /matches_creators/1.json
-  def update
-    respond_to do |format|
-      if @matches_creator.update(matches_creator_params)
-        format.html { redirect_to matches_creator_url(@matches_creator), notice: "Matches creator was successfully updated." }
-        format.json { render :show, status: :ok, location: @matches_creator }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @matches_creator.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /matches_creators/1 or /matches_creators/1.json
-  def destroy
-    @matches_creator.destroy
-
-    respond_to do |format|
-      format.html { redirect_to matches_creators_url, notice: "Matches creator was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

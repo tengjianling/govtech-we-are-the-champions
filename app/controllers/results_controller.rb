@@ -20,6 +20,7 @@ class ResultsController < ApplicationController
    
       end
     end
+    @groups = Result.distinct.pluck(:group)
     @sorted_results = Result.order(group: :asc, points: :desc, goals: :desc, alternative_points: :desc, registration_date: :asc)
   end
 
