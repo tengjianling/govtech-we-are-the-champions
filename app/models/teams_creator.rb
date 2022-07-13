@@ -32,7 +32,11 @@ class TeamCreatorValidator < ActiveModel::Validator
 
         if formatted_date == nil
           record.errors.add :user_input, "Date field is an invalid format"
-        end  
+        end
+
+        if Team.find_by(name: name) != nil
+          record.errors.add :user_input, "Team is already registered"
+        end
       end
 
       
