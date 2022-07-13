@@ -31,3 +31,5 @@ https://stark-fortress-29433.herokuapp.com
 ### Generate Results
 * Click 'Generate Results' to view the rankings of the teams in each group
 * Top 4 teams of each group (highlighted in green) will advance to the next round
+### Clear Data
+* Click "Clear All" to remove all previously added Teams and Matches
