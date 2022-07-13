@@ -12,6 +12,7 @@ https://stark-fortress-29433.herokuapp.com
 * Create a MYSQL database named 'we_are_the_champions'
 * Start up MYSQL
 * Edit database.yml file so that the 'username' and 'password' matches your MYSQL username and password
+* Run `bundle install` to install the relevant gems
 * Run `rails s` to start rails server
 * Go to localhost:3000 in your browser to access the app
 
