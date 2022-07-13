@@ -29,13 +29,14 @@ development:
   # database: db/test.sqlite3
 
 production:
-  <<: *default
-  # database: db/production.sqlite3
-  adapter: mysql2
-  encoding: utf8
-  database: we_are_the_champions
-  # host: localhost
-  username: root
+  url: <%= ENV['DATABASE_URL'] %>
+  # <<: *default
+  # # database: db/production.sqlite3
+  # adapter: mysql2
+  # encoding: utf8
+  # database: we_are_the_champions
+  # # host: localhost
+  # username: root
+  # # password: test
   # password: test
-  password: test
-  port: 10061
+  # port: 10061
